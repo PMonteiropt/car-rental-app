@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.car.rental.entity.Role;
-import com.car.rental.service.RoleService;
+import com.car.rental.service.IRoleService;
 
 @RestController
 public class RoleController {
 
 	@Autowired
-	private RoleService roleService;
+	private IRoleService roleService;
 	
 	
 	@GetMapping("/get")
@@ -23,7 +23,7 @@ public class RoleController {
 	}
 
 	@PostMapping({ "/createNewRole" })
-	public Role getLogin(@RequestBody Role role) {
+	public Role createUser(@RequestBody Role role) {
 		System.out.println();
 		return roleService.createNewRole(role);
 	}
